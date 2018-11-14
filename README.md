@@ -1,2 +1,1 @@
-# Theory-of-JS-other
-Theory of JS &amp; other
+Learn Theory of JS
