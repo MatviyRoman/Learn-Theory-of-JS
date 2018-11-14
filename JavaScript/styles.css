@@ -1,0 +1,91 @@
+header {
+
+}
+
+header nav {
+	display: inline-block;
+	height: 10px;
+}
+
+header .phoneHide {
+	pointer: cursor;
+}
+
+header .phoneShow {
+	display: none;
+}
+
+article .typeData {
+	display: none;
+}
+
+article .this {
+	display: none;
+}
+
+article .let-var {
+	display: none;
+}
+
+article .let-var-const {
+	display: none;
+}
+
+
+
+aside #read {
+	animation: blinker 2s linear infinite;
+	cursor: pointer;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+aside #read:hover {
+	color: #000;
+}
+
+aside nav {
+	display: none;
+}
+
+.read li:nth-child(2n) {
+	/*background: #6cccf2;*/
+	color: #000;
+}
+
+footer {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+footer a {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.click {
+	cursor: pointer;
+}
+
+.click:hover {
+	color: #808080;
+}
+
+h3:first-letter {
+	text-transform: capitalize;
+}
+
+#setting {
+	border: 1px solid black;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.prettyprint {
+	background: #a4d3ee;
+	font-weight: bold;
+}

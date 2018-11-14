@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<!-- My Style -->
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<title>Теорія по JS</title>
+	</head>
+	<body>
+		<header>
+			<div class="container-fluid">
+				<div class="row justify-content-center">
+					<h1 class="alert alert-secondary">
+						Теорія по JS
+					</h1>
+				</div>
+			</div>
+		</header>
+		<article>
+			<div class="container-fluid">
+				<nav>
+					<ol>
+						<li>
+							<h2 id="typeData" class="click">Типи даних js</h2>
+							<div class="typeData">
+								<div class="container">
+									<h3>Шість типів даних, typeof</h3>
+									<span>
+										В JavaScript існує кілька основних типів даних.
+										<ol>
+											<li>Число «number»</li>
+											<li>Рядок «string»</li>
+											<li>Булевий (логічний) тип «boolean»</li>
+											<li>спеціальне значення «null»</li>
+											<li>спеціальне значення «undefined»</li>
+											<li>об'єкти «object»</li>
+											<li>Symbol</li>
+										</ol>
+									</span>
+									<div class="number" id="setting">
+										<h3>Число «number»</h3>
+										<pre class="prettyprint col-md-12"><ol>
+												<Li>var n = 123;</li>
+												<li>n = 12.345;</li>
+											</ol></pre>
+										<div class = "w-100"></div>
+										Єдиний тип число використовується як для цілих, так і для дрібних чисел.
+										Існують спеціальні числові значення Infinity (нескінченність) і NaN (помилка обчислень).
+										Наприклад, нескінченність Infinity виходить при розподілі на нуль:
+										<pre class="prettyprint col-md-12"><ol>
+											<li>alert (1/0); // Infinity</li>
+										</ol></pre>
+										Помилка обчислень NaN буде результатом некоректної математичної операції, наприклад:
+										<br>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>alert ( "noNumber" * 2); // NaN, помилка</li>
+										</ol></pre>
+										<br>
+										Ці значення формально належать типу «число», хоча, звичайно, числами в їх звичайному розумінні не є.
+										<br>
+										Особливості роботи з числами в JavaScript розібрані в главі Числа.
+									</div>
+									<div class="" id="setting">
+										<h3 class="String">Рядок «string»</h3>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>var str = "Мама мила раму";</li>
+											<li>str = 'Одинарні лапки теж підійдуть';</li>
+										</ol></pre>
+										<br>
+										<b>
+										В JavaScript одинарні та подвійні лапки рівноправні.
+										</b>
+										<br>
+										Можна використовувати або ті чи інші.
+										<div class="info">
+											Тип символ не існує, є тільки рядок.
+											<br>
+											<br>
+											В JavaScript є тільки тип «рядок» string.
+											<br>
+											Що, треба сказати, цілком зручно.
+										</div>
+									</div>
+									<div class="boolean" id="setting">
+										<h3 class="boolean">Булевий (логічний) тип «boolean»</h3>
+										У нього всього два значення: true (істина) і false (брехня).
+										<br>
+										Як правило, такий тип використовується для зберігання значення типу так / ні, наприклад:
+										<br>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>var checked = true; // поле форми позначено галочкою</li>
+											<li>checked = false;    // поле форми не містить галочки</li>
+										</ol></pre>
+									</div>
+									<div class="null" id="setting">
+										<h3 class="null">спеціальне значення «null»</h3>
+										Значення null не відноситься ні до одного з типів вище, а утворює свій окремий тип, що складається з одного значення null:
+										<pre class="prettyprint col-md-12"><ol>
+											<li>var age = null;</li>
+										</ol></pre>
+										В JavaScript null не є «посиланням на неіснуючий об'єкт» або «нульовим покажчиком», як в деяких інших мовах. Це просто спеціальне значення, яке має сенс «нічого» або «значення невідомо».
+										<br>
+										Зокрема, код вище говорить про те, що вік age невідомий.
+									</div>
+									<div class="undefined" id="setting">
+										<h3 class="undefined">спеціальне значення «undefined»</h3>
+										Значення undefined, як і null, утворює свій власний тип, що складається з одного цього значення. Воно має сенс «значення не присвоїли».
+										<br>
+										Якщо змінна оголошена, але в неї нічого не записано, то її значення як раз і є undefined:
+										<br>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>var x;</li>
+											<li>alert( x ); // виведе "undefined"</li>
+										</ol></pre>
+										<br>
+										Можна привласнити undefined і в явному вигляді, хоча це робиться рідко:
+										<pre class="prettyprint col-md-12"><ol>
+											<li>var x = 123;</li>
+											<li>x = undefined;</li>
+											<li></li>
+											<li>alert( x ); // "undefined"</li>
+										</ol></pre>
+										<br>
+										<br>
+										В явному вигляді undefined зазвичай не присвоюють, так як це суперечить його змісту. Для запису в змінну «порожнього» або «невідомого» значення використовується null.
+									</div>
+									<div class="object" id="setting">
+										<h3 class="object">об'єкти «object»</h3>
+										Перші 5 типів називають "примітивними".
+										<br>
+										Окремо стоїть шостий тип: «об'єкти».
+										складних сутностей.
+										<br>
+										Він використовується для колекцій даних і для оголошення більш 									<br>
+										Оголошуються об'єкти за допомогою фігурних дужок {...}, наприклад:
+										<br>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>var user = { name: "Вася" };</li>
+										</ol></pre>
+									</div>
+									<div class="typeof" id="setting">
+										<h3 class="typeof">Оператор typeof</h3>
+										Оператор typeof повертає тип аргументу.
+										<br>
+										У нього є два синтаксиса: з дужками і без:
+										<br>
+										<br>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>Синтаксис оператора: typeof x.</li>
+											<li>Синтаксис функції: typeof(x).</li>
+										</ol></pre>
+										<br>
+										Працюють вони однаково, але перший синтаксис коротше.
+										<br>
+										<br>
+										<b>Результатом typeof є рядок, що містить тип:</b>
+										<pre class="prettyprint col-md-12"><ol>
+											<li>typeof undefined // "undefined"</li>
+											<li>typeof 0 // "number"</li>
+											<li>typeof true // "boolean"</li>
+											<li>typeof "foo" // "string"</li>
+											<li>typeof {} // "object"</li>
+											<li>typeof null // "object"  (1)</li>
+											<li>typeof function(){} // "function"  (2)</li>
+										</ol></pre>
+										<br>
+										<div class="info alert-success">
+											<b>Останні два рядки позначені, тому що typeof поводиться в них по-особливому.</b>
+											<br>
+											<ol>
+												<li>Результат typeof null == "object" - це офіційно визнана помилка в мові, яка зберігається для сумісності. Насправді null - це не об'єкт, а окремий тип даних.</li>
+												<li>Зауважимо, що функції не є окремим базовим типом в JavaScript, а підвидом об'єктів. Але typeof виділяє функції окремо, повертаючи для них "function". На практиці це досить зручно, оскільки дозволяє легко визначити функцію.</li>
+											</ol>
+										</div>
+									</div>
+									<div class="symbol" id="setting">
+										<h3>Symbol</h3>
+										To Be Continue
+									</div>
+									<div class="all" id="setting">
+									<h3>Все разом</h3>
+										Є 5 «примітивних» типів: number, string, boolean, null, undefined і 6-й тип - об'єкти object.
+										<br>
+										Оператор typeof x дозволяє з'ясувати, який тип знаходиться в x, повертаючи його у вигляді рядка.
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<h3 id="this" class="click">що таке 'this' ?</h3>
+							<div class="this">
+								<div class="container">
+									<h4>Методи об'єктів, this</h4>
+									<h5>Методи у об'єктів</h5>
+									При оголошенні об'єкта можна вказати властивість-функцію, наприклад:
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>var user = {</li>
+										<li>	name: 'Roman',</li>
+										<li>	 // метод</li>
+										<li>	sayHi: function() {</li>
+										<li>		 alert( 'Привет!' );</li>
+										<li>	 }</li>
+										<li>};</li>
+										<li>// Виклик</li>
+										<li>user.sayHi();</li>
+									</ol></pre>
+									Властивості-функції називають «методами» об'єктів. Їх можна додавати і видаляти в будь-який момент, в тому числі і явним привласненням:
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>var user = {</li>
+										<li>	name: 'Roman'</li>
+										<li>};</li>
+										<li>user.sayHi = function() { // присвоїли метод після створення об'єкта</li>
+										<li>	alert('Привiт!');</li>
+										<li>}</li>
+										<li>// Виклик методу:</li>
+										<li>user.sayHi();</li>
+									</ol></pre>
+								</div>
+							</div>
+						</li>
+						<li>
+							<h3 id="close" class="click">замикання / область видимості</h3>
+							<div class="close">
+								
+							</div>
+						</li>
+						<li>
+							<h3 id="let-var" class="click">Різниця між let та var в JavaScript</h3>
+							<div class="let-var">
+								<div class="container">
+									Як ви вже можливо знаєте, let це нове ключове слово в ECMAScript 6. Хоча let працює майже, як var, є одна істотна відмінність. Ця стаття пояснює різницю між цими двома ключовими словами в <b>JavaScript</b>.
+									<br>
+									<br>
+									Різниця полягає в маштабі. Змінні, оголошені з var знаходяться в області видимості функції, в якій були оголошенні, а ті, які були оголошенні з let знаходяться в області видимості охоплюючого (зовнішнього) блоку (яка може бути менше, ніж область видимості функції). Давайте проаналізуємо це на прикладі.
+									<br>
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>function simpleLoop(){</li>
+										<li>	/* i доступна тут через встановлення(hoisting) */</li>
+										<li>	for(var i=0;i<10;i++){</li>
+										<li>	console.log(i);</li>
+										<li>	/* звісно i доступна тут */</li>
+										<li>	}</li>
+										<li>	/* i доступна */</li>
+										<li>}</li>
+									</ol></pre>
+									Фрагмент вище показує простий цикл. Змінна i оголошена з ключовим словом var, вона встановлена(hoisted) та доступна для всієї функції. Давайте змінимо фрагмент використовуючи let замість var.
+									<br>
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>function simpleLoop(){</li>
+										<li>	/* i невидима тут */</li>
+										<li>	for(let i=0;i<10;i++){</li>
+										<li>		console.log(i);</li>
+										<li>		/* i в області видимості цього блоку */</li>
+										<li>	}</li>
+										<li>	/* i недоступна тут */</li>
+										<li>}</li>
+									</ol></pre>
+									У наведеному вище прикладі, змінна i знаходиться в області видимості циклу for. Якщо ви спробуєте отримати доступ неї до або після циклу, ви отримаєте помилку <b>ReferenceError</b>.
+									<br>
+									<br>
+									> Змінні, оголошені з var знаходяться в області видимості блоку функції, а ті, які оголошені з let знаходяться в області видимості до найближчого зовнішнього блоку.
+									<br>
+									<br>
+									<b>Блок та вираз Let</b>
+									<br>
+									<br>
+									Ключове слово let також дозволяє присвоювати значення змінних в певному блоці, не зачіпаючи інші змінні з тим же ім'ям поза блоком.
+									<br>
+									<br>
+									Це робиться таким чином:
+									<br>
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>let (name = 'Sandeep', message = 'Good Morning!') {</li>
+										<li>	console.log(message+' '+name);</li>
+										<li>}</li>
+									</ol></pre>
+									Тут змінні name і message знаходяться в області видимості блоку let.
+									<br>
+									<br>
+									З let також можна оголошувати змінні, які знаходяться в області видимості одного виразу. Наступний фрагмент демонструє це.
+									<br>
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>let (x=5) console.log(x+5);</li>
+									</ol></pre>
+									Зверніть увагу, що оголосивши let блоки і вирази, ви не встручаєтесь до змінних зовнішніх блоків. Погляньте на наступний фрагмент:
+									<br>
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>var x=12; //12</li>
+										<li>let(x=2) console.log(x); //2</li>
+										<li>console.log(x+2); //14</li>
+									</ol></pre>
+									<br>
+									Таким чином, ми розглянули різницю між let та var. Тим не менш, ви повинні пам'ятати, що ці особливості все ще експериментальні та підтримка браузерів обмежена.
+									<br>
+									<br>
+								</div>
+							</div>
+						</li>
+						<li>
+							<h3 id="let-var-const" class="click">яка різниця між let, var, const ?</h3>
+							<div class="let-var-const">
+								<div class="container">
+									<h4>Ключові слова var, let і const</h4>
+									<h5>var</h5>
+									До появи стандарту ECMAScript 6 у нас в розпорядженні було тільки одне ключове слово для оголошення змінних - <b>var</b>.
+									<br>
+									<br>
+									Змінні, оголошені за допомогою var, можуть перебувати:
+									<br>
+									<br>
+									<ul>
+										<li>Або в області видимості функції, якщо вони оголошені всередині функції. У цьому випадку вони доступні тільки всередині функції, в якій оголошено.</li>
+										<li>Або в глобальному контексті, якщо вони оголошені поза функцією. У такому випадку, вони доступні будь-де.</li>
+									</ul>
+									<br>
+									<pre class="prettyprint col-md-12"><ol>
+										<li>/* глобальна змінна */</li>
+										<li>var test = 100;</li>
+										<li>(() => {</li>
+										<li>	/* локальна змінна, доступна тільки всередині функції */</li>
+										<li>	var test = 200;</li>
+										<li>	console.log(test); //200</li>
+										<li>})();</li>
+										<li>console.log(test); //100</li>
+									</ol></pre>
+									У прикладі в першому випадку змінна test оголошена в глобальному контексті, а в другому - в локальній. Перший console.log виведе значення локальної змінної, а другий - глобальної.
+									<br>
+									<br>
+									Змінної, оголошеної за допомогою var, можна присвоїти нове значення:
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>var test = 100;</li>
+										<li>console.log(test); //100</li>
+										<li>test = 200;</li>
+										<li>console.log(test); //200</li>
+									</ol></pre>
+									<br>
+									І нарешті, змінну, оголошену за допомогою var, можна переоб'явити, тобто створити іншу змінну з тим же ім'ям в тій же області видимості:
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>var test = 100;</li>
+										<li>console.log(test); //100</li>
+										<li>var test = 200;</li>
+										<li>console.log(test); //200</li>
+									</ol></pre>
+									<br>
+									А тепер повернемося до першого прикладу і виведемо значення змінної, скажімо, тут:
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>var test = 100;</li>
+										<li>(() => {</li>
+										<li>	console.log(test); //undefined</li>
+										<li>	var test = 200;</li>
+										<li>	console.log(test); //200</li>
+										<li>})();</li>
+										<li>console.log(test); //100</li>
+									</ol></pre>
+									<br>
+									Новий console.log виведе значення undefined. Це явище називається підйомом змінних. Інтерпретатор JavaScript непомітно для нас «піднімає» оголошення змінних в початок області видимості. У нашому випадку, це початок функції. Змінні, оголошені за допомогою var, ініціалізуються значенням undefined.
+									<br>
+									В ES6 появились два новых ключевых слова: let и const.
+									<br>
+									<br>
+									<h5>let</h5>
+									Ключове слово let дуже схоже на var, але все ж має деякі відмінності. Почнемо з того, що змінна, оголошена за допомогою let потрапляє в зону видимості рівня блоку. Нагадаю, що блоком є частина коду, укладена в фігурні дужки.
+									<br>
+									<br>
+									Погляньте на приклад:
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>/ * Глобальна змінна * /</li>
+										<li>let test = 100;</li>
+										<li>{</li>
+										<li>	/ * Локальна змінна, доступна тільки всередині блоку * /</li>
+										<li>	let test = 200;</li>
+										<li>	console.log(test); //200</li>
+										<li>}</li>
+										<li>console.log(test); //100</li>
+									</ol></pre>
+									Тут перша змінна test оголошена в глобальному контексті, а друга - в локальній області видимості рівня блоку.
+									<br>
+									<br>
+									Змінним, оголошеним за допомогою let, можна присвоїти нове значення.
+									<pre class="prettyprint"><ol>
+										<li>let test = 100;</li>
+										<li>console.log(test); //100</li>
+										<li>test = 200;</li>
+										<li>console.log(test); //200</li>
+									</ol></pre>
+									Але, на відміну від var, не можна оголосити ще одну змінну з тим же ім'ям в тій же області видимості:
+									<pre class="prettyprint"><ol>
+										<li>let test = 100;</li>
+										<li>console.log(test);</li>
+										<li>let test = 200;</li>
+										<li>console.log(test);</li>
+										<li>Uncaught SyntaxError: Identifier 'test' has already been declared</li>
+									</ol></pre>
+									При спробі переоб'явити змінну, ми отримаємо помилку.
+									<br>
+									<br>
+									Зате кожен цикл створює свою область видимості, тому змінні з одним і тим же ім'ям можна використовувати в різних циклах:
+									<br>
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>for (let i = 0; i < 10; i++) { /* … */ }</li>
+										<li>for (let i = 0; i < 10; i++) { /* … */ }</li>
+									</ol></pre>
+									До речі, варто відзначити, що оголошення циклу і тіло циклу утворюють дві області видимості.
+									<br>
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>let i = 100;</li>
+										<li>for (let i = 0; i < 10; i++) {</li>
+										<li>	let i = 200;</li>
+										<li>	console.log(i); //200</li>
+										<li>}</li>
+									</ol></pre>
+									У прикладі в консоль десять разів виведеться значення 200.
+									<br>
+									<br>
+									Така поведінка let дозволяє вирішити класичну задачу з замиканнями.
+									<pre class="prettyprint"><ol>
+										<li>for (var i = 0; i < 10; i++) {</li>
+										<li>	setTimeout(function() {</li>
+										<li>		console.log(i);</li>
+										<li>    }, 10);</li>
+										<li>}</li>
+									</ol></pre>
+									З var в прикладі ми отримаємо в консолі десять разів значення 10. Але якщо замінимо var на let, приклад буде працювати так, як і очікується, і ми отримаємо в консолі числа від 0 до 9.
+									<pre class="prettyprint"><ol>
+										<li>for (let i = 0; i < 10; i++) {</li>
+										<li>    setTimeout(function() {</li>
+										<li>        console.log(i);</li>
+										<li>    }, 10);</li>
+										<li>}</li>
+									</ol></pre>
+									До обявлених let також застосовується підйом змінних, але самі змінні, на відміну від var, недоступні, поки не будуть визначені.
+									<br>
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>{</li>
+										<li>	 / * Змінна test тут не ініціалізована. Спроба завантажити викличе помилку * /</li>
+										<li>	let test = 5;</li>
+										<li>	// test равна 5</li>
+										<li>}</li>
+									</ol></pre>
+									Це називається тимчасова мертва зона (temporal dead zone) змінної.
+									<br>
+									<br>
+									<h5>const</h5>
+									<br>
+									Ключевое слово const полностью аналогично let, но переменной, объявленной с помощью <b>const</b>, нельзя присвоить новое значение и нельзя объявить неинициализированную константу.
+									<pre class="prettyprint"><ol>
+										<li>const test = 1;</li>
+										<li>test = 2;</li>
+										<li>Uncaught TypeError: Assignment to constant variable.</li>
+									</ol></pre>
+									Тут варто відзначити, що якщо константою є об'єкт, то змінювати його властивості все ж можна.
+									<br>
+									<br>
+									<pre class="prettyprint"><ol>
+										<li>const foo = {};</li>
+										<li>foo.bar = 42;</li>
+										<li>console.log(foo.bar);</li>
+									</ol></pre>
+									Не можна привласнити константі інший об'єкт.
+									<br>
+									<br>
+									Отже, підсумуємо.
+									<br>
+									<br>
+									Змінні, оголошені за допомогою var, потрапляють в зону видимості рівня функції, їх можна змінювати і переоб'являти.
+									<br>
+									<br>
+									Змінні, оголошені за допомогою let, потрапляють в зону видимості рівня блоку, їх можна змінювати, але не можна переоб'являти.
+									<br>
+									<br>
+									І нарешті, змінні, оголошені за допомогою const, потрапляють в зону видимості рівня блоку, їх не можна змінювати або переоб'являти.
+									<br>
+									<br>
+									<div class="alert alert-success" role="alert">
+										<div class="row justify-content-center">
+											<div class="varLetConst">
+												<br>
+												<hr>
+												<b>var</b>
+												<hr>
+												<b>let</b>
+												<hr>
+												<b>const</b>
+											</div>
+											<div class="left col-3">
+												<b>Область видимості</b>
+												<hr>
+												функція
+												<hr>
+												блок
+												<hr>
+												блок
+											</div>
+											<div class="center col-3">
+												<b>Можна оновити значення</b>
+												<hr>
+												так
+												<hr>
+												так
+												<hr>
+												ні
+											</div>
+											<div class="right col-3">
+												<b>Можно переобъявити</b>
+												<hr>
+												так
+												<hr>
+												ні
+												<hr>
+												ні
+											</div>
+										</div>
+									</div>
+									<br>
+									Яке ж з ключових слів використовувати і в якому випадку? Тут думки розходяться. Хтось вважає, що за замовчуванням слід використовувати const, let використовувати тільки в тому випадку, якщо значення змінної повинно оновлюватися, а var не варто використовувати зовсім, ну або в крайньому випадку, в легаси-проектах.
+									<br>
+									<br>
+									А хтось вважає за краще по-старому оголошувати змінні за допомогою var, а let використовувати тільки тоді, коли змінна дійсно використовується виключно в блоці.
+									<br>
+									<br>
+								</div>
+							</div>
+						</li>
+						<li>
+							<h3 id="es5-es6" class="click">ES5 vs ES6</h3>
+							<div class="es5-es6">
+								
+							</div>
+						</li>
+						<li>
+							<h3 id="callback-promises" class="click">callback function / Promises</h3>
+							<div class="callback-promises">
+								
+							</div>
+						</li>
+						<li>
+							<h3 id="array" class="click">методи роботи з 'Array' які є основні і як працюють і чим відрізняються?</h3>
+							<div class="array">
+								
+							</div>
+						</li>
+					</ol>
+				</nav>
+			</div>
+		</article>
+		<aside>
+			<div class="container-fluid">
+				<div class="alert alert-primary" role="alert">
+					<h2 class="alert-heading" id="read">Варто почитати!!!</h2>
+					<nav class="read">
+						<hr>
+						<ol type="A">
+							<li><a href="https://goodanswer.space/uk/zavdannya-zi-spivbesid-front-end/">Завдання зі співбесід (front-end)</a></li>
+							<li><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Ukrainian">Питання кандидату на посаду front-end розробника</a></li>
+							<li><a href="https://www.youtube.com/watch?v=H6G63NKRSi8&list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem">Javascript-джедай (Відео від Sorax)</a></li>
+							<li><a href="">Все, що ви хотіли знати про областті видимості в JavaScript (але боялися запитати)</a></li>
+							<li><a href="https://dou.ua/lenta/articles/candidate-asks/">Співбесіда: питання задає кандидат</a></li>
+							<li><a href="https://bddat-upmarusuch.jimdo.com/%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F-%D1%82%D0%B0-%D0%B2%D1%96%D0%B4%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D1%96-%D0%BD%D0%B0-%D1%81%D0%BF%D1%96%D0%B2%D0%B1%D0%B5%D1%81%D1%96%D0%B4%D1%96/">Пропонуємо вам підбірку питань співбесіди і порад, як правильно відповідати на них</a></li>
+							<li><a href="https://poohitan.com/p/middle-js-interview-questions">Збірка питань зі співбесід на вакансію Middle JavaScript розробника</a></li>
+							<li><a href="http://bonsaiden.github.io/JavaScript-Garden/ru/">JavaScript-Garden</a></li>
+							<li><a href="https://ruseller.com/jquery.php?rub=10">Manipulation jQuery</a></li>
+							<li><a href="http://anton.shevchuk.name/book/code/index.html">Приклади коду jQuery для початківців</a></li>
+							<li><a href="https://antonshevchuk.gitbooks.io/jquery-for-beginners/content/">jQuery для початківців</a></li>
+							<li><a href="https://www.kobzarev.com/wp-content/uploads/books/jquery/jQuery-tutorial-for-beginners-1.0.0beta.pdf">Підручник jQuery для початківців [PDF]</a></li>
+							<li><a href="https://jquery-docs.ru">Російська документація по API jQuery</a></li>
+							<li><a href="http://programmersworld.xyz/article/9/81">JavaScript: jQuery. Підключення, синтаксис, переваги</a></li>
+							<li><a href="https://php-academy.kiev.ua/uk/blog/jquery-succinctly-core-jquery">jQuery Коротко: Core jQuery</a></li>
+							<li><a href="https://javascript.ru/">Підручник javascript</a></li>
+							<li><a href="http://www.internet-technologies.ru/articles/otladka-javascript-s-pomoschyu-instrumentov-dlya-razrabotchikov-ot-google-chrome.html">Налагодження JavaScript за допомогою інструментів для розробників від Google Chrome</a></li>
+							<li><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxANlSuRSgldPWsbNkPqVBeFp">Знайомство з Angular 2</a></li>
+							<li><a href="https://twbs.docs.org.ua/getting-started/">Ознайомлення · Bootstrap (українською) uk-ua</a></li>
+							<li><a href="http://bootstrap-4.ru/">Bootstrap v4.1.3 [RUS]</a></li>
+							<li><a href="https://getbootstrap.com/">Bootstrap v4.1 [EN]</a></li>
+							<li><a href="https://html5book.ru/html-html5/">Опис HTML5-елементів</a></li>
+							<li><a href="http://css.yoksel.ru/nth-child/">Nth-child i nth-of-type</a></li>
+							<li><a href="https://htmlacademy.ru/courses/basic-html">Курс основи HTML.</a></li>
+							<li><a href="http://psd-html-css.ru/html/uroki-html">Уроки HTML. Верстка сайта.</a></li>
+							<li><a href="https://github.com/google/code-prettify">code prettify</a></li>
+							
+						</ol>
+						<ol>
+							<li><a href="https://medium.com/@vkozulya/es2015-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BB%D1%8C%D1%86%D0%B0%D1%85-var-let-%D0%B8-const-d194b902cfc0">ES2015 на пальцях: var, let і const</a></li>
+							<li><a href="https://learn.javascript.ru/let-const">Змінні: let і const</a></li>
+							<li><a href="https://learn.javascript.ru/object-methods">Методи об'єктів, this</a></li>
+							<li><a href="https://habr.com/post/338462/">Області видимості і замикання в JavaScript</a></li>
+							<li><a href="https://learn.javascript.ru/promise">Promise</a></li>
+							<li><a href="https://habr.com/company/zerotech/blog/317256/">Путівник по JavaScript Promise для новачків</a></li>
+							<li><a href="https://habr.com/post/242767/">ECMAScript 6 Promises</a></li>
+							<li><a href="http://echo.lviv.ua/dev/5206">ES6, ES8, ES2017: що таке ECMAScript і чим це відрізняється від JavaScript</a></li>
+							<li><a href="https://habr.com/post/151716/">Розуміння callback-функцій (колбеків)</a></li>
+						</ol>
+						<ol type="a">
+							<li><a href="https://www.taniarascia.com/">Tania Rascia</a></li>
+							<li><a href="https://devionity.com/ru/courses/js-fundamentals-and-jquery/js-loops-and-iterations-for-loop">Цикли. Цикл for () онлайн урок.</a></li>
+							<li><a href="http://echo.lviv.ua/dev/5581">22 найпоширеніших запитання і завдання на співбесіді для претендентів на посаду веб-розробника</a></li>
+							<li><a href="http://echo.lviv.ua/dev/6499">Як працює Флексбокс: cистема компонування елементів на веб-сторінці</a></li>
+							<li><a href="https://dou.ua/lenta/articles/three-years-with-angular/">Три роки з Angular і не шкодую: огляд можливостей фреймворка</a></li>
+							<li><a href="https://learn.javascript.ru/screencast/react#12-reverse-dataflow-and-state-lifting">ОсновыReact.js</a></li>
+							<li><a href="http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html">Удивительный и неизвестный inline-block</a></li>
+							<li><a href="https://codeguida.com/post/1514">JS у прикладах: 8 способів використання slice()</a></li>
+							<li><a href="http://xn--80adth0aefm3i.xn--j1amh/array">Array</a></li>
+							<li><a href="https://uk.wikibooks.org/wiki/%D0%9E%D1%81%D0%B2%D0%BE%D1%8E%D1%94%D0%BC%D0%BE_Java/%D0%9C%D0%B0%D1%81%D0%B8%D0%B2%D0%B8">Освоюємо Java/Масиви</a></li>
+							<li><a href="https://learn.javascript.ru/object-methods">Методы объектов, this</a></li>
+						</ol>
+						<ol type="i">
+							<li><a href="https://metanit.com/web/vuejs/1.3.php">Vue.js Привязка данных</a></li>
+							<li><a href="https://tuhub.ru/posts/nachinaem-rabotat-s-vue-js">Начинаем работать с Vue.js</a></li>
+							<li><a href="https://codeguida.com/post/1487">Перетасовуємо колоду карт з Vue.js</a></li>
+							<li><a href="https://codeguida.com/post/1379">Створення мультикореневих компонентів Vue.js</a></li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</aside>
+
+<!-- <div class="container">
+	<pre class="prettyprint">
+		class Voila {
+		public:
+		  // Voila
+		  static const string VOILA = "Voila";
+
+		  // will not interfere with embedded <a href="#voila2">tags</a>.
+		}
+	</pre>
+</div> -->
+
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					@ Matviy Roman 2018
+					<a href="http://portfolio.matviy.pp.ua">My Portfolio</a>
+					|
+					<a href="http://github.com/MatviyRoman">My GitHub</a>
+					|
+					<a href="www.linkedin.com/in/MatviyRoman">Linkedin</a>
+					|
+					<a href="mailto:roman@matviy.pp.ua?subject=feedback">Email me</a>
+				</div>
+			</div>
+		</footer>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="js/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
+<!-- це по js
+	1) Типи даних js
+	2) що таке 'this'
+	3) замикання / область видимості
+	4) яка різниця між let, var, const
+	5) ES5 vs ES6
+	6) callback function / Promises
+	
+	це по js
+	
+	6) методи роботи з 'Array' які є основні і як працюють і чим відрізняються  -->
